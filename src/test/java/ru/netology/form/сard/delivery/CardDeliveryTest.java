@@ -26,12 +26,8 @@ public class CardDeliveryTest {
             $("[data-test-id=phone] input").setValue("+79990001122");
             $("[data-test-id=agreement]").click();
             $("button").click();
-            $("[data-test-id=success-notification] .notification__title").shouldBe(visible, Duration.ofSeconds(20)).shouldHave(exactText("Успешно!"));
-           // $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + getFutureDate(3))); //content.getText());
+            $("[data-test-id=notification] .notification__title").shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactText("Успешно!"));
+            $("[data-test-id=notification] .notification__content").shouldHave(exactText("Встреча успешно забронирована на " + getFutureDate(3)));
 
-            //WebElement title = $("[data-test-id=notification] .notification__title").shouldBe(visible, Duration.ofSeconds(20));
-            //Assertions.assertEquals("Успешно!", title.getText());
-            //WebElement content = $("[data-test-id=notification] .notification__content");
-            //Assertions.assertEquals("Встреча успешно забронирована на " + getFutureDate(3), content.getText());
         }
     }
